@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/gfg_spirally_traversing_matrix.dir/main.cpp.o  -o gfg_spirally_traversing_matrix 

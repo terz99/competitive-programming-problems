@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/gfg_kadane_algo.dir/main.cpp.o  -o gfg_kadane_algo 

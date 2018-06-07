@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dushan/Workspace/C++/irsida/Program.cpp
+bits/stdc++.h
+-
+Program.h
+/home/dushan/Workspace/C++/irsida/Program.h
+
+/home/dushan/Workspace/C++/irsida/Program.h
+bits/stdc++.h
+-
+
+/home/dushan/Workspace/C++/irsida/main.cpp
+iostream
+-
+Program.h
+/home/dushan/Workspace/C++/irsida/Program.h
+

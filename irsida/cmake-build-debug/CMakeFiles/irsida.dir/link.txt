@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/irsida.dir/main.cpp.o CMakeFiles/irsida.dir/Program.cpp.o  -o irsida 

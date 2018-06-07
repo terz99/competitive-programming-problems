@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/leet_bst_postorder.dir/main.cpp.o  -o leet_bst_postorder 

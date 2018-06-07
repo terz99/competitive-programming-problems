@@ -1,0 +1,3 @@
+/home/dushan/Workspace/C++/todo_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dushan/Workspace/C++/todo_sort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dushan/Workspace/C++/todo_sort/cmake-build-debug/CMakeFiles/todo_sort.dir

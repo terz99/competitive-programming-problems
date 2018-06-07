@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/leet_spiral_matrix.dir/main.cpp.o  -o leet_spiral_matrix 

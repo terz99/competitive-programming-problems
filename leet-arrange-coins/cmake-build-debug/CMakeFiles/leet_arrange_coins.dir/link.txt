@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/leet_arrange_coins.dir/main.cpp.o  -o leet_arrange_coins 

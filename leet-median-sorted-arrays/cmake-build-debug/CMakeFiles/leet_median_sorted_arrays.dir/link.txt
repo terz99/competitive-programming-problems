@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/leet_median_sorted_arrays.dir/main.cpp.o  -o leet_median_sorted_arrays 

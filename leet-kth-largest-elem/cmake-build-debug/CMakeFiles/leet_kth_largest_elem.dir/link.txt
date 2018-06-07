@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/leet_kth_largest_elem.dir/main.cpp.o  -o leet_kth_largest_elem 

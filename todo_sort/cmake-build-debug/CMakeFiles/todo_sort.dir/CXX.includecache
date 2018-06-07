@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dushan/Workspace/C++/todo_sort/Date.cpp
+Date.h
+/home/dushan/Workspace/C++/todo_sort/Date.h
+
+/home/dushan/Workspace/C++/todo_sort/Date.h
+string
+-
+
+/home/dushan/Workspace/C++/todo_sort/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+algorithm
+-
+set
+-
+Date.h
+/home/dushan/Workspace/C++/todo_sort/Date.h
+
