@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dushan/Source/competitive-programming-problems/gfg-avl-delete-node/main.cpp
+cstdio
+-
+cstdlib
+-
+bits/stdc++.h
+-
+

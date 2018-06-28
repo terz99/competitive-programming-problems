@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/gfg_avl_delete_node.dir/main.cpp.o  -o gfg_avl_delete_node 
