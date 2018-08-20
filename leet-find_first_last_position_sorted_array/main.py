@@ -1,74 +1,41 @@
 class Solution(object):
 
-    def search(self, low, high, nums, target):
-        """
-        :type low: int
-        :type high: int
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
-        while low <= high:
-            mid = (low+high)//2
-            if nums[mid] == target:
-                return mid
-            elif target < nums[mid]:
-                high = mid - 1
-            else:
-                low = mid + 1
-        return -1
-
-    def find_start(self, i, nums, target):
-        """
-        :type i: int
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
-        previ = i
-        l = 0
-        r = i-1
-        while i > 0 and nums[i-1] == target:
-            previ = i
-            i = self.search(l, r, nums, target)
-            r = i-1
-        
-        if i == -1:
-            return previ
-        return i
-
-    def find_end(self, i, nums, target):
-        """
-        :type i: int
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
-        previ = i
-        l = i+1
-        r = len(nums)-1
-        while i < len(nums)-1 and nums[i+1] == target:
-            previ = i
-            i = self.search(l, r, nums, target)
-            l = i+1
-        if i == -1:
-            return previ
-        return i
-
     def searchRange(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
-        if len(nums) == 0:
+        if not nums:
             return [-1]*2
-        
-        i = self.search(0, len(nums)-1, nums, target)
-        if i == -1:
-            return [-1]*2
-        
-        start = self.find_start(i, nums, target)
-        end = self.find_end(i, nums, target)
 
-        return [start, end]
+        l = 0
+        r = len(nums)-1
+        while l < r:
+            mid = (l+r)//2
+            if target < nums[mid]:
+                r = mid - 1
+            elif target > nums[mid]:
+                l = mid + 1
+            else:
+                l = mid
+        if l < 0 or l >= len(nums):
+            return [-1]*2
+        res = [l]
+        l = 0
+        r = len(nums)-1
+        while l < r:
+            mid = (l+r+1)//2
+            if target < nums[mid]:
+                r = mid - 1
+            elif target > nums[mid]:
+                l = mid + 1
+            else:
+                r = mid
+        res.append(r)
+        return res
+
+nums = list(map(int, input().split()))
+target = int(input())
+sol = Solution()
+print(sol.searchRange(nums, target))
