@@ -10,50 +10,30 @@ struct ListNode {
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-        if(!l1 || !l2){
-            return l1 ? l1 : (l2 ? l2 : nullptr);
-        }
-
-        ListNode* curr1 = l1;
-        ListNode* curr2 = l2;
-        ListNode* ret = nullptr;
-        ListNode* currRet;
-        while(curr1 && curr2){
-            if(curr1->val < curr2->val){
-                if(ret){
-                    currRet->next = new ListNode(curr1->val);
-                    curr1 = curr1->next;
-                    currRet = currRet->next;
-                } else {
-                    ret = new ListNode(curr1->val);
-                    curr1 = curr1->next;
-                    currRet = ret;
-                }
+        ListNode dummy(0);
+        ListNode* tail = &dummy;
+        while(l1 && l2){
+            if(l1->val < l2->val){
+                tail->next = l1;
+                l1 = l1->next;
             } else {
-                if(ret){
-                    currRet->next = new ListNode(curr2->val);
-                    curr2 = curr2->next;
-                    currRet = currRet->next;
-                } else {
-                    ret = new ListNode(curr2->val);
-                    curr2 = curr2->next;
-                    currRet = ret;
-                }
+                tail->next = l2;
+                l2 = l2->next;
             }
+            tail = tail->next;
         }
-        while(curr1){
-            currRet->next = new ListNode(curr1->val);
-            curr1 = curr1->next;
-            currRet = currRet->next;
-        }
-        while(curr2){
-            currRet->next = new ListNode(curr2->val);
-            curr2 = curr2->next;
-            currRet = currRet->next;
-        }
-        return ret;
+        if(l1) tail->next = l1;
+        if(l2) tail->next = l2;
+        return dummy.next;
     }
 };
+
+static const auto _ = [](){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return nullptr;
+}();
 
 int main(){
     return 0;
