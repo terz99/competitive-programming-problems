@@ -3,43 +3,23 @@ using namespace std;
 
 class Solution {
 
-    int N;
-    stack<char> s;
-
-    void generate_parenthesis(const int& curr_num, const string& curr_par, vector<string>& res){
-        if(curr_num == 2*N){
-            if(s.empty()){
-                res.push_back(curr_par);
-            } else {
-                return;
-            }
-        } else {
-            // put a '('
-            s.push('(');
-            generate_parenthesis(curr_num+1, curr_par + "(", res);
-            s.pop();
-
-            // put a ')'
-            if(!s.empty() && s.top() == '('){
-                s.pop();
-                generate_parenthesis(curr_num+1, curr_par + ")", res);
-                s.push('(');
-            } else {
-                s.push(')');
-                generate_parenthesis(curr_num+1, curr_par + ")", res);
-                s.pop();
-            }
+    void generate_parenthesis(vector<string>& res, const string& curr_par, const int& open, const int& closed, const int& n){
+        if((int)curr_par.length() == 2*n){
+            res.push_back(curr_par);
+            return;
+        }   
+        if(open < n){
+            generate_parenthesis(res, curr_par + "(", open+1, closed, n);
+        }
+        if(closed < open){
+            generate_parenthesis(res, curr_par+")", open, closed+1, n);
         }
     }
 
 public:
     vector<string> generateParenthesis(int n) {
         vector<string> res;
-        if(n == 0){
-            return res;
-        }
-        N = n;
-        generate_parenthesis(0, "", res);
+        generate_parenthesis(res, "", 0, 0, n);
         return res;
     }
 };
