@@ -5,35 +5,30 @@ class Solution {
 
 public:
     int longestValidParentheses(string s) {
-        int left = 0, right = 0, res = 0;
-        for(int i = 0; i < s.length(); i++){
-            if(s[i] == '('){
-                left++;
-            } else {
-                right++;
-            }
-            if(left == right){
-                res = max(res, 2*right);
-            } else if(right >= left){
-                left = right = 0;
-            }
-        }
-        left = right = 0;
-        for(int i = s.length()-1; i >= 0; i--){
-            if(s[i] == ')'){
-                right++;
-            } else {
-                left++;
-            }
-            if(left == right){
-                res = max(res, 2*left);
-            } else if(left >= right){
-                left = right = 0;
+        int res = 0;
+        int n = s.length();
+        vector<int> dp(n+1);
+        for(int i = 0; i < n; i++){
+            if(i > 0 && s[i] == ')'){
+                if(s[i-1] == '('){
+                    dp[i+1] = dp[i-1] + 2;
+                } else {
+                    if(s[i - dp[i] - 1] == '(')
+                        dp[i+1] = dp[i] + dp[i - dp[i] - 1] + 2;
+                }
+                res = max(res, dp[i+1]);
             }
         }
         return res;
     }
 };
+
+static const auto _ = [](){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return nullptr;
+}();
 
 int main(){
     return 0;
